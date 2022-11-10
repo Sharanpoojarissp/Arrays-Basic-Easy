@@ -1,0 +1,31 @@
+ class Solution{
+  public:
+    //Function to find triplets with zero sum.
+    bool findTriplets(int arr[], int n)
+    {  
+  //Method 2 --> this sum is similar to Triplet sum in an array :) 
+    sort(arr , arr+n);
+    
+    for(int i = 0 ; i<n-2;i++){
+        int j = i+1;
+        int k = n-1;
+        
+    while(j<k){
+        int sum = arr[i] + arr[j] + arr[k] ;
+        
+        if(sum == 0){
+            return 1;
+        }
+        
+        else if(sum>0){
+            k--;
+        }
+        else{
+            j++;
+        }
+    }
+  }
+    return 0;
+}
+    
+};
